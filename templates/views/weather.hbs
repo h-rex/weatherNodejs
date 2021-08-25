@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{>css}}
+    <title>Weather</title>
+</head>
+
+<body>
+    <div class="container-fluid main_manu" style="height: 78px;">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                {{>navbar}}
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter Your City Name" autocomplete="off ">
+                        <input type="submit" value="search" id="submitBtn">
+                    </form>
+                </div>
+                <div class="tempInformation">
+                    <div class="top_layer">
+                        <p id="day">Tuesday</p>
+                        <p id="today_data">12 OCT</p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name">Get Output Hear</p>
+                        <div class="middle_layer data_hide">
+                            <p id="temp"><span id="temp_val">0</span><sup>o</sup>C</p>
+                            <p id="temp_status"> <i class="fa fa-cloud"></i> </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+        const dayName = document.getElementById('day')
+        const getCurDate = () => {
+            const day = [
+                "SUN",
+                "MON",
+                "TUE",
+                "WED",
+                "THU",
+                "FIR",
+                "SAT"
+            ]
+            let currentDate = new Date(); 
+            let dayy = day[currentDate.getDay()];
+            return dayy;
+        };
+        dayName.innerText = getCurDate();
+
+        const today_data = document.getElementById('today_data');
+        const GetTime = () => {
+            const monthName = [
+                "JAN",
+                "FEB",
+                "MAR",
+                "APR",
+                "MAY",
+                "JUNE",
+                "JULY",
+                "AUG",
+                "SEPT",
+                "OCT",
+                "NOV",
+                "DEC"
+            ]
+            var currentTime = new Date();
+            var month = monthName[currentTime.getMonth() + 1];
+            var day = currentTime.getDate();
+            return ` ${day} ${month}`;
+        }
+        today_data.innerText = GetTime()
+        
+    </script>
+    {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>css}}
+  <title>weather App</title>
+</head>
+
+<body style="background-color: #131414;">
+  <div class="container-fluid main_manu">
+    <div class="row">
+      <div class="col-md-10 col-12 mx-auto">
+        {{>navbar}}
+      </div>
+    </div>
+  </div>
+
+  <!-- main part -->
+  <div class="container-fluid main_header">
+    <div class="row">
+      <div class="col-md-10 col-12 mx-auto">
+        <div class="row">
+          <!-- right side -->
+          <div class="col-md-6 col-12 main_header_right">
+            <div id="carousel-1" class="carousel slide" data-ride="carousel">
+              <div class="">
+                <figure>
+                  <img src="css/Codeburne.png"class="w-100" alt="slide1">
+                </figure>
+              </div>
+            </div>
+
+          </div>
+          <!-- left side -->
+          <div class="col-md-6 col-12 main_header_left">
+            <p class="text-white">Welcome to code Burner world</p>
+            <h1 class="text-white">I am a <span class="text_clr"> full stack Devloper</span>,Youtuber And A Gamer </h1>
+            <a href="https://www.youtube.com/c/CodeBurner" target="_CodeBurner"><button>About me</button> </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {{>footer}}
+</body>
+
+</html>
